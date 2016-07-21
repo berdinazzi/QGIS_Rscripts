@@ -1,0 +1,16 @@
+{
+    "contents" : "##Vector processing=group\n##Points=vector\n##Output=output vector\n##Size=number 500\n##Field=Field Points\n##Corner_or_Center=string Center\nlibrary(rgeos)\nlibrary(sp)\nlibrary(raster)\n\nSP <- SpatialPointsDataFrame(Points,\n                             data.frame(Points[[Field][]))\n\nif(Corner_or_Center == 'Corner'){\n  SP <- shift(SP,\n              x = Size, \n              y = Size)\n}\n\nOutput <- gBuffer(SP, \n                 width = Size, \n                 quadsegs = 1, \n                 capStyle = \"SQUARE\",\n                 byid = TRUE)\n\nProjection <- CRS('+proj=utm +zone=29 +north +datum=WGS84 +units=m +no_defs')\n\nOutput <- spTransform(Output, Projection)\n",
+    "created" : 1469116615708.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "512383408",
+    "id" : "D91AA8FD",
+    "lastKnownWriteTime" : 1469116631,
+    "path" : "~/DADOS/BRUNO/QGIS_Rscripts/squareBuffer.r",
+    "project_path" : "squareBuffer.r",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
