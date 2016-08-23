@@ -1,5 +1,6 @@
 # Project Files #
 ###################
+*.Rproj.user
 *.Rproj
 *.Rhistory
 
@@ -45,3 +46,4 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+.Rproj.user
